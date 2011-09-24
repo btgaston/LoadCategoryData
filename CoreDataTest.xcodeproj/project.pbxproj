@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C046FA651428287300C00F73 /* Template.csv in Resources */ = {isa = PBXBuildFile; fileRef = C046FA641428287200C00F73 /* Template.csv */; };
+		C0062E45142B88C8000559C8 /* Template.csv in Resources */ = {isa = PBXBuildFile; fileRef = C0062E44142B88C8000559C8 /* Template.csv */; };
 		C046FA68142828FD00C00F73 /* Custom.csv in Resources */ = {isa = PBXBuildFile; fileRef = C046FA67142828FD00C00F73 /* Custom.csv */; };
 		C05EA6F21409713E0034916F /* CHCSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C05EA6EB1409713E0034916F /* CHCSVParser.m */; };
 		C05EA6F31409713E0034916F /* CHCSVWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = C05EA6ED1409713E0034916F /* CHCSVWriter.m */; };
@@ -48,7 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C046FA641428287200C00F73 /* Template.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Template.csv; path = ../Template.csv; sourceTree = "<group>"; };
+		C0062E44142B88C8000559C8 /* Template.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Template.csv; sourceTree = "<group>"; };
 		C046FA67142828FD00C00F73 /* Custom.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Custom.csv; sourceTree = "<group>"; };
 		C05EA6E91409713E0034916F /* CHCSV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCSV.h; sourceTree = "<group>"; };
 		C05EA6EA1409713E0034916F /* CHCSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCSVParser.h; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 				C096C46113FB5D2D009E0238 /* CoreDataTest.xcdatamodeld */,
 				C096C45613FB5D2D009E0238 /* Supporting Files */,
 				C05EA6F6140972F10034916F /* data.csv */,
-				C046FA641428287200C00F73 /* Template.csv */,
+				C0062E44142B88C8000559C8 /* Template.csv */,
 				C05EA6F8140ACE980034916F /* type.csv */,
 				C046FA67142828FD00C00F73 /* Custom.csv */,
 			);
@@ -288,8 +288,8 @@
 				C096C46C13FB5D2E009E0238 /* RootViewController.xib in Resources */,
 				C05EA6F7140972F10034916F /* data.csv in Resources */,
 				C05EA6F9140ACE990034916F /* type.csv in Resources */,
-				C046FA651428287300C00F73 /* Template.csv in Resources */,
 				C046FA68142828FD00C00F73 /* Custom.csv in Resources */,
+				C0062E45142B88C8000559C8 /* Template.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

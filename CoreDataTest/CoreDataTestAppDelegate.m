@@ -15,13 +15,13 @@
 #pragma mark - load initial data
 
 
-- (void) clearStore
+- (void) clearStore: (NSString*) entityTypeName
 {
  
     NSManagedObjectContext *context = [[NSManagedObjectContext alloc] init];
         [context setPersistentStoreCoordinator:self.persistentStoreCoordinator];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"QuestionType" inManagedObjectContext:context];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityTypeName inManagedObjectContext:context];
     [fetchRequest setEntity:entity];
     NSError *error;
     NSArray *items = [context executeFetchRequest:fetchRequest error:&error];
@@ -53,12 +53,12 @@
         QuestionType *questionType = [NSEntityDescription
                                    insertNewObjectForEntityForName:@"QuestionType" 
                                    inManagedObjectContext:context];
-        
-        [self QuestionType:questionType  loadDatainContext:context];    
+        //NSLog(@"Question Type :%@", questionType);        
         NSString* questionTypeName=[questionParts objectAtIndex:0];
         NSString* imagePath=[questionParts objectAtIndex:1];
         [questionType setValue:[questionTypeName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"name"];
         [questionType setValue:[imagePath stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"imagePath"];
+        [self QuestionType:questionType  loadDatainContext:context];   
     }
     
     NSError *error; 
@@ -73,11 +73,12 @@
 -(void) QuestionType:(QuestionType* ) questionType loadDatainContext: (NSManagedObjectContext*) context
 {
     NSString *filePath = [[NSBundle mainBundle] pathForResource:[questionType name] ofType:@"csv"];
+    NSLog(@"File Path :%@", filePath);
     NSStringEncoding encoding = NSUTF8StringEncoding; 
     NSArray *categoryTypes = [NSArray arrayWithContentsOfCSVFile:filePath encoding:encoding error:nil];
     for (NSObject* categoryType in categoryTypes){
         NSString *categoryTypeString = [categoryType description];
-        NSUInteger stringLength= [categoryType  length];
+        NSUInteger stringLength= [categoryTypeString length];
         NSArray *categoryParts = [[categoryTypeString substringWithRange:NSMakeRange(1,stringLength-2)] componentsSeparatedByString: @","]; 
         Category* category=[NSEntityDescription
                             insertNewObjectForEntityForName:@"Category" 
@@ -125,7 +126,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    [self clearStore];
+    [self clearStore: @"QuestionType"];
+    [self clearStore: @"Category"];
     //[self loadInitialData];
     [self loadInitialDataCsv];
     // Override point for customization after application launch.
