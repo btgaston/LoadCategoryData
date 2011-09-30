@@ -1,4 +1,5 @@
 #import "QuestionType.h"
+#import "Category.h"
 #import "CHCSV.h"
 #import "CoreDataTestAppDelegate.h"
 #import "RootViewController.h"
@@ -58,7 +59,7 @@
         NSString* imagePath=[questionParts objectAtIndex:1];
         [questionType setValue:[questionTypeName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"name"];
         [questionType setValue:[imagePath stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"imagePath"];
-        [self QuestionType:questionType  loadDatainContext:context];   
+        [self QuestionType:questionType  loadCategoriesInContext:context];   
     }
     
     NSError *error; 
@@ -70,7 +71,7 @@
 
 
 
--(void) QuestionType:(QuestionType* ) questionType loadDatainContext: (NSManagedObjectContext*) context
+-(void) QuestionType:(QuestionType* ) questionType loadCategoriesInContext: (NSManagedObjectContext*) context
 {
     NSString *filePath = [[NSBundle mainBundle] pathForResource:[questionType name] ofType:@"csv"];
     NSLog(@"File Path :%@", filePath);
@@ -88,9 +89,18 @@
         NSString* imagePath=[categoryParts objectAtIndex:1];
         [category  setValue:[categoryTypeName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"name"];
         [category  setValue:[imagePath stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"imagePath"];
+        
+    
+        
         [questionType addCategoriesObject: category];
 
     }
+}
+
+
+-(void) Category:(Category* ) category loadObjectsInContext: (NSManagedObjectContext*) context
+{
+    
 }
 
 

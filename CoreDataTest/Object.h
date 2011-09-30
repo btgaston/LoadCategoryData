@@ -1,5 +1,5 @@
 //
-//  QuestionType.h
+//  Object.h
 //  CoreDataTest
 //
 //  Created by Jianwei Sun on 9/29/11.
@@ -11,11 +11,11 @@
 
 @class Category;
 
-@interface QuestionType : NSManagedObject {
+@interface Object : NSManagedObject {
 @private
 }
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * imagePath;
-@property (nonatomic, retain) NSSet* Categories;
+@property (nonatomic, retain) Category * category;
 
 @end
