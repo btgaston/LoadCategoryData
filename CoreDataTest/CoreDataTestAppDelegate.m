@@ -74,7 +74,7 @@
 -(void) QuestionType:(QuestionType* ) questionType loadCategoriesInContext: (NSManagedObjectContext*) context
 {
     NSString *filePath = [[NSBundle mainBundle] pathForResource:[questionType name] ofType:@"csv"];
-    NSLog(@"File Path :%@", filePath);
+    NSLog(@"Category File Path :%@", filePath);
     NSStringEncoding encoding = NSUTF8StringEncoding; 
     NSArray *categoryTypes = [NSArray arrayWithContentsOfCSVFile:filePath encoding:encoding error:nil];
     for (NSObject* categoryType in categoryTypes){
@@ -90,55 +90,28 @@
         [category  setValue:[categoryTypeName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"name"];
         [category  setValue:[imagePath stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"imagePath"];
         
-    
-        
+        [self Category:category  loadItemsInContext:context]; 
         [questionType addCategoriesObject: category];
 
     }
 }
 
 
--(void) Category:(Category* ) category loadObjectsInContext: (NSManagedObjectContext*) context
+-(void) Category:(Category* ) category loadItemsInContext: (NSManagedObjectContext*) context
 {
-    
+     NSLog(@"Category Name :%@", [category name]);
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:[category name] ofType:@"csv"];
+    NSLog(@"Item File Path :%@", filePath);
 }
 
 
-- (void)loadInitialData
-{
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    NSManagedObjectContext *context = [[NSManagedObjectContext alloc] init];
-    [context setPersistentStoreCoordinator:self.persistentStoreCoordinator];
-    
-    
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"data" ofType:@"csv"];
-    
-    char buffer[1000];
-    FILE* file = fopen([path UTF8String], "r");
-    
-    while(fgets(buffer, 1000, file) != NULL)
-    {   
-        NSString* string = [[NSString alloc] initWithUTF8String:buffer];
-        NSArray *parts = [string componentsSeparatedByString:@"\t"];        
-        QuestionType *oneObject = [self methodToCreateObjectFromArray:parts];
-        [string release];
-    }
-    NSLog(@"Done initial load");
-    fclose(file);
-    NSError *error; 
-    if (![context save:&error])
-        NSLog(@"Error saving: %@", error);
-    
-    [context release];
-    [pool drain];
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
     [self clearStore: @"QuestionType"];
     [self clearStore: @"Category"];
-    //[self loadInitialData];
+    [self clearStore: @"Item"];
     [self loadInitialDataCsv];
     // Override point for customization after application launch.
     // Add the navigation controller's view to the window and display.

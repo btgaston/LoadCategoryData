@@ -15,9 +15,9 @@
 		C05EA6F51409713E0034916F /* NSString+CHCSVAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C05EA6F11409713E0034916F /* NSString+CHCSVAdditions.m */; };
 		C05EA6F7140972F10034916F /* data.csv in Resources */ = {isa = PBXBuildFile; fileRef = C05EA6F6140972F10034916F /* data.csv */; };
 		C05EA6F9140ACE990034916F /* type.csv in Resources */ = {isa = PBXBuildFile; fileRef = C05EA6F8140ACE980034916F /* type.csv */; };
-		C066064D143561AD0048586A /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C066064C143561AD0048586A /* Category.m */; };
-		C0660650143561D40048586A /* QuestionType.m in Sources */ = {isa = PBXBuildFile; fileRef = C066064F143561D40048586A /* QuestionType.m */; };
-		C0660653143561F10048586A /* Object.m in Sources */ = {isa = PBXBuildFile; fileRef = C0660652143561F10048586A /* Object.m */; };
+		C06606591447CEB70048586A /* QuestionType.m in Sources */ = {isa = PBXBuildFile; fileRef = C06606581447CEB70048586A /* QuestionType.m */; };
+		C066065C1447CEB70048586A /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = C066065B1447CEB70048586A /* Item.m */; };
+		C066065F1447CEB70048586A /* Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C066065E1447CEB70048586A /* Category.m */; };
 		C096C44E13FB5D2D009E0238 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C096C44D13FB5D2D009E0238 /* UIKit.framework */; };
 		C096C45013FB5D2D009E0238 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C096C44F13FB5D2D009E0238 /* Foundation.framework */; };
 		C096C45213FB5D2D009E0238 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C096C45113FB5D2D009E0238 /* CoreGraphics.framework */; };
@@ -36,6 +36,8 @@
 		C096C47E13FB5D2E009E0238 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C096C47C13FB5D2E009E0238 /* InfoPlist.strings */; };
 		C096C48113FB5D2E009E0238 /* CoreDataTestTests.h in Resources */ = {isa = PBXBuildFile; fileRef = C096C48013FB5D2E009E0238 /* CoreDataTestTests.h */; };
 		C096C48313FB5D2E009E0238 /* CoreDataTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C096C48213FB5D2E009E0238 /* CoreDataTestTests.m */; };
+		C0B36AB3144A264100989585 /* Customfood.csv in Resources */ = {isa = PBXBuildFile; fileRef = C0B36AB2144A264100989585 /* Customfood.csv */; };
+		C0B36AB5144A278A00989585 /* CustomToy.csv in Resources */ = {isa = PBXBuildFile; fileRef = C0B36AB4144A278A00989585 /* CustomToy.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,12 +64,12 @@
 		C05EA6F11409713E0034916F /* NSString+CHCSVAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CHCSVAdditions.m"; sourceTree = "<group>"; };
 		C05EA6F6140972F10034916F /* data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.csv; sourceTree = "<group>"; };
 		C05EA6F8140ACE980034916F /* type.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = type.csv; sourceTree = "<group>"; };
-		C066064B143561AD0048586A /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
-		C066064C143561AD0048586A /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
-		C066064E143561D40048586A /* QuestionType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionType.h; sourceTree = "<group>"; };
-		C066064F143561D40048586A /* QuestionType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionType.m; sourceTree = "<group>"; };
-		C0660651143561F10048586A /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
-		C0660652143561F10048586A /* Object.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Object.m; sourceTree = "<group>"; };
+		C06606571447CEB70048586A /* QuestionType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionType.h; sourceTree = "<group>"; };
+		C06606581447CEB70048586A /* QuestionType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionType.m; sourceTree = "<group>"; };
+		C066065A1447CEB70048586A /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		C066065B1447CEB70048586A /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		C066065D1447CEB70048586A /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
+		C066065E1447CEB70048586A /* Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Category.m; sourceTree = "<group>"; };
 		C096C44913FB5D2D009E0238 /* CoreDataTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C096C44D13FB5D2D009E0238 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C096C44F13FB5D2D009E0238 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -90,6 +92,8 @@
 		C096C47F13FB5D2E009E0238 /* CoreDataTestTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoreDataTestTests-Prefix.pch"; sourceTree = "<group>"; };
 		C096C48013FB5D2E009E0238 /* CoreDataTestTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataTestTests.h; sourceTree = "<group>"; };
 		C096C48213FB5D2E009E0238 /* CoreDataTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataTestTests.m; sourceTree = "<group>"; };
+		C0B36AB2144A264100989585 /* Customfood.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Customfood.csv; sourceTree = "<group>"; };
+		C0B36AB4144A278A00989585 /* CustomToy.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CustomToy.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,15 +179,17 @@
 				C096C46813FB5D2E009E0238 /* RootViewController.m */,
 				C096C46A13FB5D2E009E0238 /* RootViewController.xib */,
 				C096C46113FB5D2D009E0238 /* CoreDataTest.xcdatamodeld */,
-				C0660651143561F10048586A /* Object.h */,
-				C0660652143561F10048586A /* Object.m */,
-				C066064E143561D40048586A /* QuestionType.h */,
-				C066064F143561D40048586A /* QuestionType.m */,
-				C066064B143561AD0048586A /* Category.h */,
-				C066064C143561AD0048586A /* Category.m */,
+				C066065D1447CEB70048586A /* Category.h */,
+				C066065E1447CEB70048586A /* Category.m */,
+				C066065A1447CEB70048586A /* Item.h */,
+				C066065B1447CEB70048586A /* Item.m */,
+				C06606571447CEB70048586A /* QuestionType.h */,
+				C06606581447CEB70048586A /* QuestionType.m */,
 				C096C45613FB5D2D009E0238 /* Supporting Files */,
 				C05EA6F6140972F10034916F /* data.csv */,
 				C0062E44142B88C8000559C8 /* Template.csv */,
+				C0B36AB4144A278A00989585 /* CustomToy.csv */,
+				C0B36AB2144A264100989585 /* Customfood.csv */,
 				C05EA6F8140ACE980034916F /* type.csv */,
 				C046FA67142828FD00C00F73 /* Custom.csv */,
 			);
@@ -295,6 +301,8 @@
 				C05EA6F9140ACE990034916F /* type.csv in Resources */,
 				C046FA68142828FD00C00F73 /* Custom.csv in Resources */,
 				C0062E45142B88C8000559C8 /* Template.csv in Resources */,
+				C0B36AB3144A264100989585 /* Customfood.csv in Resources */,
+				C0B36AB5144A278A00989585 /* CustomToy.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,9 +346,9 @@
 				C05EA6F31409713E0034916F /* CHCSVWriter.m in Sources */,
 				C05EA6F41409713E0034916F /* NSArray+CHCSVAdditions.m in Sources */,
 				C05EA6F51409713E0034916F /* NSString+CHCSVAdditions.m in Sources */,
-				C066064D143561AD0048586A /* Category.m in Sources */,
-				C0660650143561D40048586A /* QuestionType.m in Sources */,
-				C0660653143561F10048586A /* Object.m in Sources */,
+				C06606591447CEB70048586A /* QuestionType.m in Sources */,
+				C066065C1447CEB70048586A /* Item.m in Sources */,
+				C066065F1447CEB70048586A /* Category.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
