@@ -1,19 +1,19 @@
 //
-//  Object.m
+//  Item.m
 //  CoreDataTest
 //
-//  Created by Jianwei Sun on 9/29/11.
+//  Created by Jianwei Sun on 10/13/11.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "Object.h"
+#import "Item.h"
 #import "Category.h"
 
 
-@implementation Object
+@implementation Item
 @dynamic name;
 @dynamic imagePath;
-@dynamic category;
+@dynamic Category;
 
 
 @end

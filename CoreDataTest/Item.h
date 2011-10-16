@@ -1,8 +1,8 @@
 //
-//  Object.h
+//  Item.h
 //  CoreDataTest
 //
-//  Created by Jianwei Sun on 9/29/11.
+//  Created by Jianwei Sun on 10/13/11.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
@@ -11,11 +11,11 @@
 
 @class Category;
 
-@interface Object : NSManagedObject {
+@interface Item : NSManagedObject {
 @private
 }
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * imagePath;
-@property (nonatomic, retain) Category * category;
+@property (nonatomic, retain) Category * Category;
 
 @end
