@@ -76,22 +76,22 @@
     NSString *filePath = [[NSBundle mainBundle] pathForResource:[questionType name] ofType:@"csv"];
     NSLog(@"Category File Path :%@", filePath);
     NSStringEncoding encoding = NSUTF8StringEncoding; 
-    NSArray *categoryTypes = [NSArray arrayWithContentsOfCSVFile:filePath encoding:encoding error:nil];
-    for (NSObject* categoryType in categoryTypes){
-        NSString *categoryTypeString = [categoryType description];
-        NSUInteger stringLength= [categoryTypeString length];
-        NSArray *categoryParts = [[categoryTypeString substringWithRange:NSMakeRange(1,stringLength-2)] componentsSeparatedByString: @","]; 
-        Category* category=[NSEntityDescription
+    NSArray *categories = [NSArray arrayWithContentsOfCSVFile:filePath encoding:encoding error:nil];
+    for (NSObject* category in categories){
+        NSString *categoryLine = [category description];
+        NSUInteger stringLength= [categoryLine length];
+        NSArray *categoryParts = [[categoryLine substringWithRange:NSMakeRange(1,stringLength-2)] componentsSeparatedByString: @","]; 
+        Category* categoryObject=[NSEntityDescription
                             insertNewObjectForEntityForName:@"Category" 
                             inManagedObjectContext:context];
        
         NSString* categoryTypeName=[categoryParts objectAtIndex:0];
         NSString* imagePath=[categoryParts objectAtIndex:1];
-        [category  setValue:[categoryTypeName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"name"];
-        [category  setValue:[imagePath stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"imagePath"];
+        [categoryObject  setValue:[categoryTypeName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"name"];
+        [categoryObject  setValue:[imagePath stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"imagePath"];
         
-        [self Category:category  loadItemsInContext:context]; 
-        [questionType addCategoriesObject: category];
+        [self Category:categoryObject  loadItemsInContext:context]; 
+        [questionType addCategoriesObject: categoryObject];
 
     }
 }
@@ -99,10 +99,20 @@
 
 -(void) Category:(Category* ) category loadItemsInContext: (NSManagedObjectContext*) context
 {
-     NSLog(@"Category Name :%@", [category name]);
+    //NSLog(@"Category Name :%@", [category name]);
     NSString *filePath = [[NSBundle mainBundle] pathForResource:[category name] ofType:@"csv"];
-    NSLog(@"Item File Path :%@", filePath);
-}
+    int fileLength=[filePath length];
+    if(fileLength>0)
+    {
+        NSLog(@"Item File Path :%@", filePath);
+        NSStringEncoding encoding = NSUTF8StringEncoding;
+        NSArray *items = [NSArray arrayWithContentsOfCSVFile:filePath encoding:encoding error:nil];
+        for (NSObject* item in items){
+            NSString *itemLine= [item description];
+            NSLog(@"Item Line :%@", itemLine);
+        }
+    }
+   }
 
 
 
