@@ -85,9 +85,9 @@
                             insertNewObjectForEntityForName:@"Category" 
                             inManagedObjectContext:context];
        
-        NSString* categoryTypeName=[categoryParts objectAtIndex:0];
+        NSString* categoryName=[categoryParts objectAtIndex:0];
         NSString* imagePath=[categoryParts objectAtIndex:1];
-        [categoryObject  setValue:[categoryTypeName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"name"];
+        [categoryObject  setValue:[categoryName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"name"];
         [categoryObject  setValue:[imagePath stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"imagePath"];
         
         [self Category:categoryObject  loadItemsInContext:context]; 
@@ -110,6 +110,18 @@
         for (NSObject* item in items){
             NSString *itemLine= [item description];
             NSLog(@"Item Line :%@", itemLine);
+            
+            NSUInteger stringLength= [itemLine length];
+            NSArray *itemParts = [[itemLine substringWithRange:NSMakeRange(1,stringLength-2)] componentsSeparatedByString: @","]; 
+            Item* itemObject=[NSEntityDescription
+                                      insertNewObjectForEntityForName:@"Item" 
+                                      inManagedObjectContext:context];
+            
+            NSString* itemName=[itemParts objectAtIndex:0];
+            NSString* imagePath=[itemParts objectAtIndex:1];
+            [itemObject  setValue:[itemName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"name"];
+            [itemObject  setValue:[imagePath stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] forKey:@"imagePath"]; 
+            [category addItemsObject: itemObject]; 
         }
     }
    }
