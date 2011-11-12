@@ -66,7 +66,10 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
-    return [sectionInfo numberOfObjects];
+    NSString* name=  [sectionInfo name];
+    
+    int count= [sectionInfo numberOfObjects];
+    return count;
 }
 
 // Customize the appearance of table view cells.
@@ -158,8 +161,10 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSManagedObject *managedObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[managedObject valueForKey:@"name"] description];
+     NSIndexPath* ip=[NSIndexPath indexPathForRow:0 inSection:0];
+    NSManagedObject *managedObject = [self.fetchedResultsController objectAtIndexPath:ip];
+    NSString* des= [[managedObject valueForKey:@"name"] description];
+    cell.textLabel.text=des;
 }
 
 - (void)insertNewObject
